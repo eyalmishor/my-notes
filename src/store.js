@@ -5,10 +5,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-
+    notes: [],
   },
-  mutations: {
 
+  mutations: {
+    addNewNote(state, note) {
+      state.notes.push(note);
+    },
   },
   actions: {
 
