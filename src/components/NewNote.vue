@@ -1,36 +1,33 @@
 <template>
-    <form @submit.prevent="onSubmit">
-        <p>
-            <label>Title:</label>
-            <input v-model="title" id="title"/>
-        </p>
-        <p>
-            <label>Text:</label>
-            <input v-model="text" id="text"/>
-        </p>
-        <input type="submit" value="Submit">
+    <form @submit.prevent="submit" >
+        <div class="form-group">
+            <label>My note:</label>
+            <input v-model="title" class="form-control"/>
+        </div>
+        <button class="btn btn-primary" :disabled="!title">Send</button>
     </form>
 </template>
 
 <script>
-    export default {
-        name: "new-note",
-        data() {
-            return {
-                title: null,
-                text: null
-            }
-        },
-        methods: {
-            onSubmit() {
-                this.$emit('add-new-note',  {title: this.title, test: this.text});
-                this.title = null
-                this.text = null
-            }
-        }
-    }
+export default {
+  name: 'new-note',
+  data() {
+    return {
+      title: null,
+      text: null,
+    };
+  },
+  methods: {
+    submit() {
+      this.$emit('add-new-note', { title: this.title, text: this.text });
+      this.clear();
+    },
+    clear() {
+      this.title = null;
+    },
+  },
+};
 </script>
 
 <style scoped>
-
 </style>

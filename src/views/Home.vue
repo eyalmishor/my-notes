@@ -1,21 +1,17 @@
 <template>
-  <div class="home">
-    <img src="../assets/logo.png">
-    <HelloWorld msg="Welcome to my-notes"/>
+  <div class="container">
     <notes-manager/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
-import NotesManager from '@/components/NotesManager';
+import NotesManager from '@/components/NotesManager.vue';
 
 export default {
   name: 'home',
   components: {
-      NotesManager,
-      HelloWorld,
+    NotesManager,
   },
 };
 </script>
