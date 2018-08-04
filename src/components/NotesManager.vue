@@ -18,16 +18,13 @@ export default {
   data() {
     return {
       tabs: ["Notes", "New note"],
-      selectedTab: "Notes"
+      selectedTab: "Notes",
     };
   },
   methods: {
     addNewNote(note) {
       this.$store.commit("addNewNote", note);
     }
-  },
-  created() {
-      this.$store.dispatch("created");
   },
 };
 </script>

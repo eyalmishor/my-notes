@@ -20,19 +20,22 @@ const notesRef = database.ref('notes');
 export default new Vuex.Store({
   state: {
     notes: [],
+    user: null,
   },
 
   mutations: {
     addNewNote(state, note) {
+      state.user = note.user;
       state.notes.push(note);
       notesRef.push(note);
     },
   },
   actions: {
     created() {
-      console.log('heelo');
       notesRef.on('child_added', (snapshot) => {
-        this.state.notes.push(snapshot.val());
+        if (snapshot.val().user !== this.state.user) {
+          this.state.notes.push(snapshot.val());
+        }
       });
     },
   },
