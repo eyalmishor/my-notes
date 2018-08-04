@@ -10,12 +10,12 @@
 
 <script>
 export default {
-  name: 'notes-list',
+  name: "notes-list",
   computed: {
     notes() {
       return this.$store.state.notes;
-    },
-  },
+    }
+  }
 };
 </script>
 

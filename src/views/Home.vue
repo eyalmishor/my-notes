@@ -6,12 +6,12 @@
 
 <script>
 // @ is an alias to /src
-import NotesManager from '@/components/NotesManager.vue';
+import NotesManager from "@/components/NotesManager.vue";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    NotesManager,
-  },
+    NotesManager
+  }
 };
 </script>

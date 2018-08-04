@@ -14,22 +14,22 @@
 
 <script>
 export default {
-  name: 'new-note',
+  name: "new-note",
   data() {
     return {
       title: null,
-      user: null,
+      user: null
     };
   },
   methods: {
     submit() {
-      this.$emit('add-new-note', { title: this.title, user: this.user });
+      this.$emit("add-new-note", { title: this.title, user: this.user });
       this.clear();
     },
     clear() {
       this.title = null;
-    },
-  },
+    }
+  }
 };
 </script>
 
