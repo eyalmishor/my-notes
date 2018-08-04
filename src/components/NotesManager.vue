@@ -6,26 +6,28 @@
 </template>
 
 <script>
-import NotesList from './NotesList.vue';
-import NewNote from './NewNote.vue';
+import NotesList from "./NotesList.vue";
+import NewNote from "./NewNote.vue";
 
 export default {
   components: {
     NewNote,
-    NotesList,
+    NotesList
   },
-  name: 'notes-manager',
+  name: "notes-manager",
   data() {
     return {
-      tabs: ['Notes', 'New note'],
-      selectedTab: 'Notes',
+      tabs: ["Notes", "New note"],
+      selectedTab: "Notes"
     };
   },
   methods: {
     addNewNote(note) {
-      this.selectedTab = 'Notes';
-      this.$store.commit('addNewNote', note);
-    },
+      this.$store.commit("addNewNote", note);
+    }
+  },
+  created() {
+      this.$store.dispatch("created");
   },
 };
 </script>
